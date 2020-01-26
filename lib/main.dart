@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,29 +10,81 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.blueGrey,
-        appBar: AppBar(
-          title: Text('Flutter App'),
-          backgroundColor: Colors.grey[900],
-        ),
+        backgroundColor: Colors.teal,
         body: SafeArea(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Container(
-                height: 100.0,
+              CircleAvatar(
+                radius: 50.0,
+                backgroundImage: AssetImage('images/cat.jpg'),
+              ),
+              Text(
+                'JS KhamKham',
+                style: TextStyle(
+                  fontSize: 40,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Pacifico',
+                ),
+              ),
+              Text(
+                'https://.facebook.com/JSKhamKham',
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.teal[100],
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Source Sans Pro',
+                ),
+              ),
+              SizedBox(
+                height: 20.0,
+                width: 150.0,
+                child: Divider(color: Colors.teal[100]),
+              ),
+              Card(
                 color: Colors.white,
-                child: Text('Container 1'),
+                margin: EdgeInsets.symmetric(
+                  vertical: 10.0,
+                  horizontal: 25.0,
+                ),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    '+661234567890',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      color: Colors.teal[900],
+                      fontFamily: 'Source Sans Pro',
+                      letterSpacing: 2.5,
+                    ),
+                  ),
+                ),
               ),
-              Container(
-                height: 100.0,
-                color: Colors.blue,
-                child: Text('Container 2'),
-              ),
-              Container(
-                height: 100.0,
-                color: Colors.red,
-                child: Text('Container 3'),
+              Card(
+                color: Colors.white,
+                margin: EdgeInsets.symmetric(
+                  vertical: 10.0,
+                  horizontal: 25.0,
+                ),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    'jskhamkham@gmail.com',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      color: Colors.teal[900],
+                      fontFamily: 'Source Sans Pro',
+                      letterSpacing: 2.5,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
